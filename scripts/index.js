@@ -23,3 +23,26 @@ setInterval(() => {
   tIndex = (tIndex + 1) % testimonials.length;
   testimonials[tIndex].classList.add("active");
 }, 7000);
+
+//Portfolio Carosel
+const track = document.querySelector('.carousel-track');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+const items = Array.from(track.children);
+const itemWidth = items[0].getBoundingClientRect().width + 20; // include margin
+
+let currentIndex = 0;
+
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < items.length - 3) { // show 3 items at a time
+        currentIndex++;
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+});
+
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+});

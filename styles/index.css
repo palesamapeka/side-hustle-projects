@@ -15,6 +15,14 @@ h3 {
     margin: 0.5em 0;
 }
 
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
 .accent-text {
     font-family: 'Dancing Script', cursive;
     color: #D4A6A1;
@@ -152,25 +160,61 @@ nav a:hover {
 }
 
 /* ===== Services Section ===== */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* Carousel container */
+.portfolio-carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* ===== Portfolio Section ===== */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* Track that moves */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
-.portfolio-grid img {
-    transition: transform 0.3s ease;
+/* Portfolio item in carousel */
+.portfolio-item {
+    min-width: 250px;
+    /* width of one item */
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.portfolio-grid img:hover {
-    transform: scale(1.05);
+.portfolio-item:hover{
+    transform: scale(1.09);
+}
+
+/* Carousel buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(193, 161, 141, 0.8);
+    border: none;
+    padding: 10px 15px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 100;
+    transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: #D4A6A1;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
 }
 
 /* ===== Testimonials ===== */
@@ -230,11 +274,12 @@ footer a {
 
 footer a:hover {
     color: #aa7670;
-;
+    ;
 }
 
 /* Responsive behavior */
 @media (max-width: 768px) {
+
     /* Stack navbar items vertically */
     nav {
         flex-direction: column;

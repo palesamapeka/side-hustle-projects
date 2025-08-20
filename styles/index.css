@@ -87,10 +87,11 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding-right: 50px;
 }
 
 nav a:hover {
-    color: #D4A6A1;
+    color: #aa7670;
 }
 
 /* Mobile menu toggle (hamburger icon) */

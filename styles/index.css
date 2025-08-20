@@ -159,62 +159,99 @@ nav a:hover {
     border-radius: 50%;
 }
 
-/* ===== Services Section ===== */
-/* Carousel container */
+/* ===== Portfolio Section ===== */
+#portfolio {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+}
+
+#portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+}
+
+/* Carousel Container */
 .portfolio-carousel {
     position: relative;
-    overflow: hidden;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
-/* Track that moves */
+/* Track Container */
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Track */
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
 }
 
-/* Portfolio item in carousel */
+/* Portfolio Items */
 .portfolio-item {
     min-width: 250px;
-    /* width of one item */
-    margin: 0 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 250px;
     text-align: center;
+    flex-shrink: 0;
 }
 
-.portfolio-item:hover{
-    transform: scale(1.09);
+.portfolio-item img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-/* Carousel buttons */
+.portfolio-item img:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-item p {
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+    color: #4A4A4A;
+    font-size: 1.2rem;
+}
+
+/* Carousel Buttons */
 .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(193, 161, 141, 0.8);
-    border: none;
-    padding: 10px 15px;
-    font-size: 2rem;
+    background-color: #333;
     color: white;
+    border: none;
+    padding: 15px;
     cursor: pointer;
-    border-radius: 5px;
-    z-index: 100;
-    transition: background 0.3s ease;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    z-index: 10;
 }
 
 .carousel-btn:hover {
-    background-color: #D4A6A1;
+    background-color: #555;
 }
 
-.carousel-btn.prev {
-    left: 10px;
+/* Position Buttons */
+.prev {
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.carousel-btn.next {
-    right: 10px;
+.next {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* ===== Testimonials ===== */
@@ -309,5 +346,23 @@ footer a:hover {
     /* Make logo smaller on mobile */
     .logo img {
         max-width: 120px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .portfolio-item img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .portfolio-item {
+        min-width: 200px;
+        max-width: 200px;
+    }
+
+    .carousel-btn {
+        padding: 10px;
+        font-size: 18px;
     }
 }

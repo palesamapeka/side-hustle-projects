@@ -26,23 +26,40 @@ setInterval(() => {
 
 //Portfolio Carosel
 const track = document.querySelector('.carousel-track');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
 const items = Array.from(track.children);
-const itemWidth = items[0].getBoundingClientRect().width + 20; // include margin
 
-let currentIndex = 0;
+let index = 0; // Current slide
+const itemWidth = items[0].getBoundingClientRect().width + 20; // Width + gap
 
-nextBtn.addEventListener('click', () => {
-    if (currentIndex < items.length - 3) { // show 3 items at a time
-        currentIndex++;
-        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+// Move Carousel
+function moveCarousel() {
+    track.style.transform = `translateX(${-index * itemWidth}px)`;
+}
+
+// Next Button
+nextButton.addEventListener('click', () => {
+    if (index < items.length - 1) {
+        index++;
+    } else {
+        index = 0; // Loop back to start
     }
+    moveCarousel();
 });
 
-prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+// Previous Button
+prevButton.addEventListener('click', () => {
+    if (index > 0) {
+        index--;
+    } else {
+        index = items.length - 1; // Loop to end
     }
+    moveCarousel();
 });
+
+// Auto Slide
+setInterval(() => {
+    index = (index + 1) % items.length;
+    moveCarousel();
+}, 4000);

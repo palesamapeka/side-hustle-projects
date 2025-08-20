@@ -1,31 +1,29 @@
-/* ===== Global Styles ===== */
+:root {
+    --ivory: #F9F4F1;
+    --dusty-rose: #df796e;
+    --warm-taupe: #C1A18D;
+    --muted-gold: #ce6d4c;
+    --charcoal: #4A4A4A;
+}
+
+/* Global */
 body {
     font-family: 'Lora', serif;
-    background-color: #F9F4F1;
-    color: #4A4A4A;
-    margin: 0;
-    padding: 0;
+    color: var(--charcoal);
+    background: var(--ivory);
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: 'Playfair Display', serif;
-    color: #4A4A4A;
-    margin: 0.5em 0;
-}
-
-h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 20px;
+    color: var(--charcoal);
 }
 
 .accent-text {
     font-family: 'Dancing Script', cursive;
-    color: #D4A6A1;
+    color: var(--dusty-rose);
 }
 
 img {
@@ -33,336 +31,162 @@ img {
     border-radius: 10px;
 }
 
-section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: auto;
+/* Navbar */
+.navbar {
+    background: var(--warm-taupe);
 }
 
-.card {
-    background-color: #F9F4F1;
-    border: 1px solid #C1A18D;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    margin: 20px 0;
+.navbar .nav-link {
+    color: #fff;
+    font-weight: 700;
 }
 
-button {
-    background-color: #D4A6A1;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background-color: #D1B07E;
-}
-
-/* ===== Navigation ===== */
-/* Logo */
-.logo img {
-    max-width: 150px;
-    height: auto;
-    display: block;
-}
-
-/* Navbar container */
-nav {
-    background-color: #C1A18D;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 10px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-/* Navbar links */
-nav .menu {
-    display: flex;
-    gap: 15px;
-}
-
-nav a {
-    color: white;
+.navbar .nav-link:hover {
+    color: var(--dusty-rose);
     text-decoration: none;
-    font-weight: bold;
-    padding-right: 50px;
 }
 
-nav a:hover {
-    color: #aa7670;
+.navbar-brand img {
+    height: 44px;
+    border-radius: 8px;
 }
 
-/* Mobile menu toggle (hamburger icon) */
-.menu-toggle {
-    display: none;
-    font-size: 2rem;
-    color: white;
+body {
+    padding-top: 76px;
+}
+
+/* room for fixed-top */
+
+/* Buttons */
+.btn-primary {
+    background: var(--dusty-rose);
+    border-color: var(--dusty-rose);
+}
+
+.btn-primary:hover {
+    background: var(--muted-gold);
+    border-color: var(--muted-gold);
+    text-decoration: none;
+}
+
+/* Sections */
+section.section-pad {
+    padding: 80px 0;
+}
+
+/* Hero (Bootstrap carousel as background slides) */
+.hero-carousel .carousel-item {
+    height: 80vh;
+    min-height: 460px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .25));
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, .4);
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+}
+
+/* Cards */
+.card {
+    background-color: var(--ivory);
+    border: 1px solid var(--warm-taupe);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
+    transition: transform .45s ease, box-shadow .45s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .12);
     cursor: pointer;
 }
 
-/* ===== Hero Carousel ===== */
-.hero {
-    height: 80vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    overflow: hidden;
-}
-
-.hero-slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.hero-slide.active {
-    opacity: 1;
-}
-
-.hero-text {
-    position: relative;
-    z-index: 10;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-}
-
-/* ===== About Section ===== */
-.about-flex {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.about-flex img {
-    width: 200px;
-    border-radius: 50%;
-}
-
-/* ===== Portfolio Section ===== */
+/* Portfolio Carousel */
 #portfolio {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f8f8f8;
+    background: #f4ede9;
 }
 
-#portfolio h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    font-family: 'Playfair Display', serif;
-    color: #333;
+.portfolio .carousel-item {
+    padding: 10px 0;
 }
 
-/* Carousel Container */
-.portfolio-carousel {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
+.portfolio figure {
+    margin: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
-}
-
-/* Track Container */
-.carousel-track-container {
-    overflow: hidden;
-    width: 100%;
-}
-
-/* Track */
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 20px;
-}
-
-/* Portfolio Items */
-.portfolio-item {
-    min-width: 250px;
-    max-width: 250px;
     text-align: center;
-    flex-shrink: 0;
 }
 
-.portfolio-item img {
-    border-radius: 50%;
-    width: 250px;
-    height: 250px;
+.portfolio img {
+    width: 240px;
+    height: 240px;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    border-radius: 50%;
+    transition: transform .3s ease, box-shadow .3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, .12);
 }
 
-.portfolio-item img:hover {
+.portfolio img:hover {
     transform: scale(1.05);
 }
 
-.portfolio-item p {
+.portfolio figcaption {
     margin-top: 10px;
     font-family: 'Playfair Display', serif;
-    color: #4A4A4A;
-    font-size: 1.2rem;
-}
-
-/* Carousel Buttons */
-.carousel-btn {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 24px;
-    border-radius: 50%;
-    transition: background-color 0.3s;
-    z-index: 10;
-}
-
-.carousel-btn:hover {
-    background-color: #555;
-}
-
-/* Position Buttons */
-.prev {
-    position: absolute;
-    left: -50px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.next {
-    position: absolute;
-    right: -50px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* ===== Testimonials ===== */
-.testimonial-slider {
-    position: relative;
-    overflow: hidden;
-    max-width: 800px;
-    margin: auto;
-}
-
-.testimonial {
-    display: none;
-    text-align: center;
-    font-style: italic;
     font-size: 1.1rem;
 }
 
-.testimonial.active {
-    display: block;
+/* Testimonials */
+.testimonial {
+    font-style: italic;
+    font-size: 1.05rem;
 }
 
-/* ===== Contact Section ===== */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: auto;
-}
-
-input,
-textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #C1A18D;
-    font-family: 'Lora', serif;
-    font-size: 1rem;
-}
-
-textarea {
-    resize: vertical;
-}
-
-/* ===== Footer ===== */
+/* Footer */
 footer {
-    background-color: #C1A18D;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
+    background: var(--warm-taupe);
+    color: #fff;
 }
 
 footer a {
-    color: white;
-    margin: 0 10px;
+    color: #fff;
     text-decoration: none;
 }
 
 footer a:hover {
-    color: #aa7670;
-    ;
+    color: var(--muted-gold);
+    text-decoration: none;
 }
 
-/* Responsive behavior */
-@media (max-width: 768px) {
-
-    /* Stack navbar items vertically */
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
-
-    /* Show hamburger icon */
-    .menu-toggle {
-        display: block;
-    }
-
-    /* Hide menu by default */
-    .menu {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    /* Show menu when active */
-    .menu.active {
-        display: flex;
-    }
-
-    /* Make logo smaller on mobile */
-    .logo img {
-        max-width: 120px;
-    }
+/* Link style */
+a {
+    color: var(--dusty-rose);
+    text-decoration: underline;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .portfolio-item img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .portfolio-item {
-        min-width: 200px;
-        max-width: 200px;
-    }
-
-    .carousel-btn {
-        padding: 10px;
-        font-size: 18px;
-    }
+a:hover {
+    text-decoration: underline dotted;
 }

@@ -1,0 +1,192 @@
+:root {
+    --ivory: #F9F4F1;
+    --dusty-rose: #df796e;
+    --warm-taupe: #C1A18D;
+    --muted-gold: #ce6d4c;
+    --charcoal: #4A4A4A;
+}
+
+/* Global */
+body {
+    font-family: 'Lora', serif;
+    color: var(--charcoal);
+    background: var(--ivory);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--charcoal);
+}
+
+.accent-text {
+    font-family: 'Dancing Script', cursive;
+    color: var(--dusty-rose);
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--warm-taupe);
+}
+
+.navbar .nav-link {
+    color: #fff;
+    font-weight: 700;
+}
+
+.navbar .nav-link:hover {
+    color: var(--dusty-rose);
+    text-decoration: none;
+}
+
+.navbar-brand img {
+    height: 44px;
+    border-radius: 8px;
+}
+
+body {
+    padding-top: 76px;
+}
+
+/* room for fixed-top */
+
+/* Buttons */
+.btn-primary {
+    background: var(--dusty-rose);
+    border-color: var(--dusty-rose);
+}
+
+.btn-primary:hover {
+    background: var(--muted-gold);
+    border-color: var(--muted-gold);
+    text-decoration: none;
+}
+
+/* Sections */
+section.section-pad {
+    padding: 80px 0;
+}
+
+/* Hero (Bootstrap carousel as background slides) */
+.hero-carousel .carousel-item {
+    height: 80vh;
+    min-height: 460px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .25));
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, .4);
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+}
+
+/* Cards */
+.card {
+    background-color: var(--ivory);
+    border: 1px solid var(--warm-taupe);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
+    transition: transform .45s ease, box-shadow .45s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .12);
+    cursor: pointer;
+}
+
+/* Portfolio Carousel */
+#portfolio {
+    background: #f4ede9;
+}
+
+.portfolio .carousel-item {
+    padding: 10px 0;
+}
+
+.portfolio figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.portfolio img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform .3s ease, box-shadow .3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, .12);
+}
+
+.portfolio img:hover {
+    transform: scale(1.05);
+}
+
+.portfolio figcaption {
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+}
+
+/* Testimonials */
+.testimonial {
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+/* Footer */
+footer {
+    background: var(--warm-taupe);
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--muted-gold);
+    text-decoration: none;
+}
+
+/* Link style */
+a {
+    color: var(--dusty-rose);
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: underline dotted;
+}

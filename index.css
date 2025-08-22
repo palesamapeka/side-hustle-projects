@@ -23,7 +23,7 @@ h4 {
 
 .accent-text {
     font-family: 'Dancing Script', cursive;
-    color: var(--dusty-rose);
+    color: #ffffff
 }
 
 .container a:hover{
@@ -69,6 +69,15 @@ img {
     text-decoration: none;
 }
 
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:focus:active {
+    background-color: var(--dusty-rose) !important;
+    border-color: var(--dusty-rose) !important;
+    box-shadow: none !important; /* Removes Bootstrap's blue glow */
+    color: #fff !important;
+}
+
 /* Sections */
 section.section-pad {
     padding: 80px 0;
@@ -102,6 +111,7 @@ section.section-pad {
 .hero-content h1 {
     font-size: clamp(2rem, 4vw, 3.25rem);
     text-shadow: 2px 2px 8px rgba(0, 0, 0, .4);
+    color: #ffffff;
 }
 
 .hero-content p {

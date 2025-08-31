@@ -180,28 +180,31 @@ footer {
     color: #fff;
     padding: 2rem 5%;
     width: 100%;
+    font-family: 'Urbanist', sans-serif;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    /* aligns address and socials horizontally */
     flex-wrap: wrap;
-    /* stacks on smaller screens */
     gap: 2rem;
     margin-bottom: 1rem;
 }
 
-.footer-address,
-.footer-socials {
+.footer-address, .footer-contact {
     display: flex;
     flex-direction: column;
-    /* stacks text vertically inside each section */
 }
 
-.footer-address p,
-.footer-socials p {
-    margin: 0.2rem 0;
+.footer-address p, .footer-contact p {
+    margin: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-contact i {
+    color: #A3B18A; /* optional: highlight icons in sage green */
 }
 
 /* Center copyright text */
@@ -216,7 +219,9 @@ footer {
     .footer-content {
         flex-direction: column;
         align-items: flex-start;
-        /* left-align stacked sections */
+    }
+    .footer-address p, .footer-contact p {
+        font-size: 0.95rem;
     }
 }
 

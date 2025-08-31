@@ -1,0 +1,282 @@
+/* Google Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+header {
+    background-color: #000;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.logo span {
+    color: #A3B18A;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #A3B18A;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+}
+
+.book-btn {
+    padding: 0.5rem 1rem;
+    background-color: #A3B18A;
+    color: #000;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.book-btn:hover {
+    background-color: #3d5a0c;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 90vh;
+    background: url('./Hero Section for Banbury Man.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 0 2rem;
+    color: #fff;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: auto;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.cta-btn {
+    background-color: #A3B18A;
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #3d5a0c;
+}
+
+/* Services */
+.services {
+    padding: 4rem 5%;
+    text-align: center;
+    background-color: #F9F9F9;
+}
+
+.services h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 40px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/*FOOTER*/
+footer {
+    background: #000;
+    color: #fff;
+    padding: 2rem 5%;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    /* aligns address and socials horizontally */
+    flex-wrap: wrap;
+    /* stacks on smaller screens */
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-address,
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    /* stacks text vertically inside each section */
+}
+
+.footer-address p,
+.footer-socials p {
+    margin: 0.2rem 0;
+}
+
+/* Center copyright text */
+.footer-copyright {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        /* left-align stacked sections */
+    }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        background: #fff;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        color: #000;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .cta-btn {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}

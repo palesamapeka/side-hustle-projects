@@ -8,7 +8,9 @@ function HamburgerMenu() {
 }
 
 function HandleBookings() {
-
+  
 }
+
+HandleBookings();
 
 HamburgerMenu();

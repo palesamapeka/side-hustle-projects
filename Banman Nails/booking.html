@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Your Appointment</title>
+  <title>BANMAN | Premium Barber & Grooming Studio in Johannesburg</title>
+  <meta name="description"
+    content="BANMAN is a premier barber and grooming studio in Johannesburg. Book appointments online for precision haircuts, beard sculpting, and luxury grooming services.">
   <link
     href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700&family=Poppins:wght@300;400;500&display=swap"
     rel="stylesheet" />
@@ -31,13 +33,25 @@
   <div class="booking">
     <div class="calendar-container">
       <!-- Google Calendar Appointment Scheduling begin -->
-      <iframe
-        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ14OjecSt-dZBoJUMkH3C8jsDijcAlaVh6CKXZl4z4ZEowdpHHfNUSQlbJLRF1B9Aj9L8RA8uyp?gv=true"
-        frameborder="0" scrolling="no">
-      </iframe>
+      <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+      <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+      <script>
+        (function () {
+          var target = document.currentScript;
+          window.addEventListener('load', function () {
+            calendar.schedulingButton.load({
+              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ36ZyNn6xPd_y-eTmTPLE_1jOwf-9rhnhSEyBJREOqI9jYm-jyy6K1rIfdDgJZnOpj8g02NtnwT?gv=true',
+              color: '#039BE5',
+              label: 'Book an appointment',
+              target,
+            });
+          });
+        })();
+      </script>
       <!-- end Google Calendar Appointment Scheduling -->
     </div>
   </div>
+
   <!-- Footer -->
   <footer>
     <div id="contact" class="footer-content">
@@ -63,7 +77,6 @@
     <p class="footer-copyright">&copy; 2025 BANMAN | All Rights Reserved</p>
   </footer>
 
-  <!-- JS for Mobile Menu -->
   <script src="./scripts.js"></script>
 </body>
 

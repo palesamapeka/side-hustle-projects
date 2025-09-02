@@ -23,11 +23,11 @@
         <div class="logo">BAN<span>MAN</span></div>
         <ul class="nav-links">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#">Gallery</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="#" class="book-btn">Book Now</a>
+        <a href="./booking.html" class="book-btn">Book Now</a>
         <div class="hamburger">&#9776;</div>
       </nav>
     </header>
@@ -41,18 +41,16 @@
           BANMAN is a premier grooming studio redefining personal care for the
           modern man and woman. We combine innovative techniques, top-tier
           products, and a refined atmosphere to deliver grooming experiences
-          that go beyond the ordinary. Our expertly trained stylists and
-          grooming specialists ensure each client leaves feeling confident,
-          polished, and ready to make their mark. Blending traditional
+          that go beyond the ordinary. Blending traditional
           techniques with contemporary trends, we offer a premium,
           detail-oriented grooming experience in a comfortable environment.
         </p>
-        <a href="#" class="cta-btn">Book Your Appointment</a>
+        <a href="./booking.html" class="cta-btn">Book Your Appointment</a>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services">
+    <section id="services" class="services">
       <h2>Our Services</h2>
       <div class="service-grid">
         <div class="service-card">
@@ -78,7 +76,7 @@
 
     <!-- Footer -->
     <footer>
-      <div class="footer-content">
+      <div id="contact" class="footer-content">
         <div class="footer-address">
           <p><strong>Address:</strong></p>
           <p>Bordeaux Road, Randburg,</p>
@@ -87,22 +85,16 @@
         </div>
         <div class="footer-contact">
           <p><i class="fas fa-phone"></i> 084 994 7553</p>
-          <p><i class="fas fa-envelope"></i> banman@banburynailbar.com</p>
-          <p><i class="fab fa-facebook"></i> Facebook</p>
-          <p><i class="fab fa-instagram"></i> Instagram</p>
+          <p><a href="mailto:banman@banburynailbar.com"><i class="fas fa-envelope"></i> banman@banburynailbar.com</a></p>
+          <p><a href="https://www.facebook.com/?_rdr" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></p>
+          <p><a a href="https://www.instagram.com/?_rdr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></p>
         </div>
       </div>
       <p class="footer-copyright">&copy; 2025 BANMAN | All Rights Reserved</p>
     </footer>
 
     <!-- JS for Mobile Menu -->
-    <script>
-      const hamburger = document.querySelector(".hamburger");
-      const navLinks = document.querySelector(".nav-links");
-
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
+    <script src="./scripts.js">
     </script>
   </body>
 </html>

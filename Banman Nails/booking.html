@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Your Appointment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Navbar -->
+      <header>
+        <nav class="navbar">
+          <div class="logo">BAN<span>MAN</span></div>
+          <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html#services">Services</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="hamburger">&#9776;</div>
+        </nav>
+      </header>
+
+      <!-- Booking Section -->
+      <div class="booking">
+        <h3>Book an Appointment</h3>
+        <label for="appointment-date">Select Date:</label>
+        <input type="date" id="appointment-date" />
+
+        <div id="time-slots" class="time-slots"></div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <div id="contact" class="footer-content">
+        <div class="footer-address">
+          <p><strong>Address:</strong></p>
+          <p>Bordeaux Road, Randburg,</p>
+          <p>Johannesburg</p>
+          <p>Gauteng</p>
+        </div>
+        <div class="footer-contact">
+          <p><i class="fas fa-phone"></i> 084 994 7553</p>
+          <p>
+            <a href="mailto:banman@banburynailbar.com"
+              ><i class="fas fa-envelope"></i> banman@banburynailbar.com</a
+            >
+          </p>
+          <p>
+            <a href="https://www.facebook.com/?_rdr" target="_blank"
+              ><i class="fab fa-facebook"></i> Facebook</a
+            >
+          </p>
+          <p>
+            <a a href="https://www.instagram.com/?_rdr" target="_blank"
+              ><i class="fab fa-instagram"></i> Instagram</a
+            >
+          </p>
+        </div>
+      </div>
+      <p class="footer-copyright">&copy; 2025 BANMAN | All Rights Reserved</p>
+    </footer>
+
+    <!-- JS for Mobile Menu -->
+    <script src="./scripts.js"></script>
+  </body>
+</html>
